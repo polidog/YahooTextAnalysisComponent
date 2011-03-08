@@ -1,0 +1,35 @@
+Yahoo Japanの テキスト解析APIを使用するためのコンポーネントです。
+使い方はいたってシンプルです。
+
+
+・メソッドとAPIの対応
+
+日本語形態素解析
+jpTextAnalysis
+
+かな漢字変換
+jpKana2Kanji
+
+ルビ振り
+jpFurigana
+
+校正支援
+jpKousei
+
+日本語係り受け解析
+jpDependency
+
+キーフレーズ抽出
+jpKeyphrase
+
+
+基本的には各メソッドの引数は$str,$optionsとなっております。
+$strは解析したい文字列、$optionsはAPIのパラメータになります。
+必須項目は自動でセットされるので気にしなくて大丈夫です。
+
+beforeFilter等でAPIのkeyをセットしてください。
+function beforeFilter() {
+	$this->YahooTextAnalysis->appId = "develperのAPIキーをここで設定";
+}
+
+あとはcontrollerで普通にメソッドを実行するだけで要素解析とかしちゃってくれちゃいます！
